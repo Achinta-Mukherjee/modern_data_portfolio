@@ -39,13 +39,13 @@ df = df.drop_duplicates()
 
 
 # Objective 7: Group and Aggregate: We want to know which product category makes the most money. Create a new DataFrame called category_sales. Group the data by product_category and calculate the sum() of the total_amount
-category_sales = df.groupby('product_category')['total_amount'].sum()
+category_sales = df.groupby('product_category')['total_amount'].sum().reset_index()
 print("Total sales by product category:\n", category_sales)
 
 
 
 #Objective 8: Sort the Data: Sort category_sales from highest revenue to lowest.
-category_sales = category_sales.sort_values(ascending=False)
+category_sales = category_sales.sort_values(by='total_amount', ascending=False).reset_index(drop=True)
 print("Total sales by product category (sorted):\n", category_sales)    
 
 
