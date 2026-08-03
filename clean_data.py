@@ -38,17 +38,39 @@ df = df.drop_duplicates()
 
 
 
-# Objective 7: Create a brand new column in your DataFrame called month.
+########################################################################################
+# SECTION 1: Category Analysis ---
+########################################################################################
+
+# Objective 7: Find out which product category had the highest sales
+category_sales = df.groupby('product_category')['total_amount'].sum().reset_index()
+
+# Objective 8: Sort the Data and export
+category_sales.sort_values(by='total_amount', ascending=False, inplace=True)
+category_sales.to_csv('top_selling_categories.csv', index=False)
+
+
+
+########################################################################################
+# SECTION 2: Month Analysis ---
+########################################################################################
+
+# Objective 9: Create a brand new column in your DataFrame called month.
 df['month'] = df['date'].dt.month_name()
 
 
 
-# Objective 8: Find out which month had the highest sales
+# Objective 10: Find out which month had the highest sales
 top_selling_months = df.groupby('month')['total_amount'].sum().reset_index()
 # print("Month with the highest sales:\n", top_selling_months)
 
 
 
-#Objective 8: Sort the Data on total_amount and export the file as top_selling_months.csv
+#Objective 11: Sort the Data on total_amount and export the file as top_selling_months.csv
+print("--> Sorting month data...")
 top_selling_months.sort_values(by='total_amount', ascending=False, inplace=True)
-top_selling_months.to_csv('top_selling_months.csv')
+
+print("--> Attempting to save top_selling_months.csv...")
+top_selling_months.to_csv('top_selling_months.csv', index=False)
+
+print("--> SUCCESS! Reached the end of the script.")
