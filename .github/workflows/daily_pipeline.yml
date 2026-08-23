@@ -67,4 +67,4 @@ jobs:
       - name: Run dbt Models
         run: |
           cd modern_data_portfolio
-          dbt run --select mart_user_rosters+
+          dbt run
