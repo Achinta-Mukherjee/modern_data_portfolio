@@ -45,7 +45,25 @@ jobs:
         run: |
           python 02_api_ingestion/bigquery_load.py
 
-      # Step 6: The dbt Transformation (BigQuery -> BigQuery)
+      # Step 6: Create dbt profiles.yml dynamically on the server
+      - name: Configure dbt Profile
+        run: |
+          mkdir -p ~/.dbt
+          cat << EOF > ~/.dbt/profiles.yml
+          modern_data_portfolio:
+            target: dev
+            outputs:
+              dev:
+                type: bigquery
+                method: oauth
+                project: project-f8aca53c-7f41-4c40-968
+                dataset: retail_dataset
+                threads: 4
+                timeout_seconds: 300
+                location: US
+          EOF
+
+      # Step 7: The dbt Transformation (BigQuery -> BigQuery)
       - name: Run dbt Models
         run: |
           cd modern_data_portfolio
