@@ -43,7 +43,7 @@ jobs:
       # Step 5: The Python Extraction (API -> BigQuery)
       - name: Run Python Extraction
         run: |
-          python 02_api_ingestion/bigquery_load.py
+          python 02_api_ingestion/bigquery_load.PY
 
       # Step 6: The dbt Transformation (BigQuery -> BigQuery)
       - name: Run dbt Models
