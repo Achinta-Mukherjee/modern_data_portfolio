@@ -1,0 +1,82 @@
+[0m12:37:14.305802 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1115e38f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112009820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1120095b0>]}
+
+
+============================== 12:37:14.311341 | 71b88caa-d3e5-431e-a20d-a5d0f0d3b06f ==============================
+[0m12:37:14.311341 [info ] [MainThread]: Running with dbt=1.12.3
+[0m12:37:14.311810 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'introspect': 'True', 'profiles_dir': '/Users/achintamukherjee/.dbt', 'use_colors': 'True', 'invocation_command': 'dbt init modern_data_portfolio', 'log_format': 'default', 'warn_error': 'None', 'write_json': 'True', 'empty': 'None', 'cache_selected_only': 'False', 'printer_width': '80', 'quiet': 'False', 'partial_parse': 'True', 'log_path': 'logs', 'hints_enabled': 'True', 'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'no_print': 'None', 'fail_fast': 'False', 'static_parser': 'True', 'indirect_selection': 'eager', 'target_path': 'None', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m12:37:14.326288 [info ] [MainThread]: Creating dbt configuration folder at /Users/achintamukherjee/.dbt
+[0m12:37:14.327347 [debug] [MainThread]: Starter project path: /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/dbt/include/starter_project
+[0m12:37:14.332105 [info ] [MainThread]: Setting up your profile.
+[0m12:38:13.094490 [info ] [MainThread]: Profile modern_data_portfolio written to /Users/achintamukherjee/.dbt/profiles.yml using target's profile_template.yml and your supplied values.
+[0m12:38:13.098576 [info ] [MainThread]: Running dbt debug to validate the project...
+[0m12:38:13.099439 [info ] [MainThread]: dbt version: 1.12.3
+[0m12:38:13.099679 [info ] [MainThread]: python version: 3.12.6
+[0m12:38:13.099850 [info ] [MainThread]: python path: /Library/Frameworks/Python.framework/Versions/3.12/bin/python3.12
+[0m12:38:13.100127 [info ] [MainThread]: os info: macOS-26.6.2-arm64-arm-64bit
+[0m12:38:13.133195 [info ] [MainThread]: Using profiles dir at /Users/achintamukherjee/.dbt
+[0m12:38:13.133488 [info ] [MainThread]: Using profiles.yml file at /Users/achintamukherjee/.dbt/profiles.yml
+[0m12:38:13.133627 [info ] [MainThread]: Using dbt_project.yml file at /Users/achintamukherjee/Personal/PROGRAMMING/Data Engineering/kaggle_retail_project/modern_data_portfolio/dbt_project.yml
+[0m12:38:13.133747 [info ] [MainThread]: adapter type: bigquery
+[0m12:38:13.133845 [info ] [MainThread]: adapter version: 1.12.0
+[0m12:38:13.172043 [info ] [MainThread]: Configuration:
+[0m12:38:13.172250 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m12:38:13.172350 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m12:38:13.172446 [info ] [MainThread]: Required dependencies:
+[0m12:38:13.172616 [debug] [MainThread]: Executing "git --help"
+[0m12:38:13.209923 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m12:38:13.210360 [debug] [MainThread]: STDERR: "b''"
+[0m12:38:13.210491 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m12:38:13.210598 [info ] [MainThread]: Connection:
+[0m12:38:13.210723 [info ] [MainThread]:   method: oauth
+[0m12:38:13.210800 [info ] [MainThread]:   database: project-f8aca53c-7f41-4c40-968
+[0m12:38:13.210875 [info ] [MainThread]:   execution_project: project-f8aca53c-7f41-4c40-968
+[0m12:38:13.210944 [info ] [MainThread]:   schema: raw_data
+[0m12:38:13.211014 [info ] [MainThread]:   location: US
+[0m12:38:13.211079 [info ] [MainThread]:   priority: interactive
+[0m12:38:13.211144 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m12:38:13.211210 [info ] [MainThread]:   reservation: None
+[0m12:38:13.211275 [info ] [MainThread]:   impersonate_service_account: None
+[0m12:38:13.211338 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m12:38:13.211406 [info ] [MainThread]:   job_retries: 1
+[0m12:38:13.211469 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m12:38:13.211533 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m12:38:13.211598 [info ] [MainThread]:   job_link_info_level_log: False
+[0m12:38:13.211662 [info ] [MainThread]:   timeout_seconds: 300
+[0m12:38:13.211724 [info ] [MainThread]:   client_id: None
+[0m12:38:13.211787 [info ] [MainThread]:   token_uri: None
+[0m12:38:13.211849 [info ] [MainThread]:   compute_region: None
+[0m12:38:13.211911 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m12:38:13.211973 [info ] [MainThread]:   gcs_bucket: None
+[0m12:38:13.212033 [info ] [MainThread]:   dataproc_batch: None
+[0m12:38:13.212285 [info ] [MainThread]: Registered adapter: bigquery=1.12.0
+[0m12:38:13.293852 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m12:38:13.294111 [debug] [MainThread]: On debug: select 1 as id
+[0m12:38:13.294267 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:38:16.156138 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=project-f8aca53c-7f41-4c40-968&j=bq:US:598f921f-d0f2-408a-b7fb-ac53391584f0&page=queryresults
+[0m12:38:16.910215 [debug] [MainThread]: SQL status: OK in 0.753 seconds
+[0m12:38:17.438197 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m12:38:17.439034 [info ] [MainThread]: [32mAll checks passed![0m
+[0m12:38:17.439763 [info ] [MainThread]: Your new dbt project "modern_data_portfolio" was created!
+Initialized new project in /Users/achintamukherjee/Personal/PROGRAMMING/Data Engineering/kaggle_retail_project/modern_data_portfolio/modern_data_portfolio
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m12:38:17.468815 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 63.53315, "process_in_blocks": "0", "process_kernel_time": 0.325487, "process_mem_max_rss": "218595328", "process_out_blocks": "0", "process_user_time": 0.998743}
+[0m12:38:17.469342 [debug] [MainThread]: Command `dbt init` succeeded at 12:38:17.469254 after 63.53 seconds
+[0m12:38:17.469606 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m12:38:17.469844 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x127dc9970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11166bc80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1274dacf0>]}
+[0m12:38:17.470107 [debug] [MainThread]: Flushing usage events
+[0m12:38:18.918857 [debug] [MainThread]: An error was encountered while trying to flush usage events
