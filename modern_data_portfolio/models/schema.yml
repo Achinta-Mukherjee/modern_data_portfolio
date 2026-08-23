@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_api_users
+    description: "A cleaned up view of our raw API users data."
+    columns:
+      - name: user_id
+        description: "The primary key for this user."
+        tests:
+          - unique
+          - not_null
+      - name: email
+        description: "The user's email address."
+        tests:
+          - not_null

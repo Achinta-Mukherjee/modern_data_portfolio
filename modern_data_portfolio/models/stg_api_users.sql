@@ -1,7 +1,7 @@
-{{ config(materialized='table') }}
+{{ config(materialized='view') }}
 
 WITH source_data AS (
-    -- We just write a simple SELECT statement
+    -- Notice we just write a simple SELECT statement
     SELECT * 
     FROM `project-f8aca53c-7f41-4c40-968.raw_data.api_users`
 ),
