@@ -1,39 +1,52 @@
-# CRITICAL: These permissions are required for Workload Identity Federation
-permissions:
-  contents: 'read'
-  id-token: 'write'
+name: Daily ELT Pipeline
 
-steps:
-  # Step 1: Download your code from your repository onto the server
-  - name: Checkout Code
-    uses: actions/checkout@v4
+on:
+  schedule:
+    # Runs every day at 6:00 AM UTC
+    - cron: '0 6 * * *'
+  # This allows you to click a "Run Now" button on GitHub for testing
+  workflow_dispatch:
 
-  # Step 2: Authenticate to Google Cloud (The Magic WIF Step!)
-  - name: Authenticate to GCP
-    uses: google-github-actions/auth@v2
-    with:
-      # Replace YOUR_WIF_STRING_HERE with the long string you copied from GCP
-      workload_identity_provider: '//iam.googleapis.com/projects/616363217893/locations/global/workloadIdentityPools/github-actions-pool/providers/github-actions-provider'
-      service_account: 'python-bq-loader@project-f8aca53c-7f41-4c40-968.iam.gserviceaccount.com'
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    
+    # CRITICAL: These permissions are required for Workload Identity Federation
+    permissions:
+      contents: 'read'
+      id-token: 'write'
 
-  # Step 3: Install Python on the server
-  - name: Setup Python
-    uses: actions/setup-python@v5
-    with:
-      python-version: '3.10'
+    steps:
+      # Step 1: Download your code from your repository onto the server
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-  # Step 4: Install all our required libraries
-  - name: Install Dependencies
-    run: |
-      pip install pandas requests pandas-gbq dbt-bigquery
+      # Step 2: Authenticate to Google Cloud (The Magic WIF Step!)
+      - name: Authenticate to GCP
+        uses: google-github-actions/auth@v2
+        with:
+          # REPLACE the string below with your actual WIF string!
+          workload_identity_provider: '//iam.googleapis.com/projects/616363217893/locations/global/workloadIdentityPools/github-actions-pool/providers/github-actions-provider'
+          service_account: 'python-bq-loader@project-f8aca53c-7f41-4c40-968.iam.gserviceaccount.com'
 
-  # Step 5: The Python Extraction (API -> BigQuery)
-  - name: Run Python Extraction
-    run: |
-      python 02_api_ingestion/bigquery_load.py
+      # Step 3: Install Python on the server
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
 
-  # Step 6: The dbt Transformation (BigQuery -> BigQuery)
-  - name: Run dbt Models
-    run: |
-      cd modern_data_portfolio
-      dbt run --select mart_user_rosters+
+      # Step 4: Install all our required libraries
+      - name: Install Dependencies
+        run: |
+          pip install pandas requests pandas-gbq dbt-bigquery
+
+      # Step 5: The Python Extraction (API -> BigQuery)
+      - name: Run Python Extraction
+        run: |
+          python 02_api_ingestion/bigquery_load.py
+
+      # Step 6: The dbt Transformation (BigQuery -> BigQuery)
+      - name: Run dbt Models
+        run: |
+          cd modern_data_portfolio
+          dbt run --select mart_user_rosters+
