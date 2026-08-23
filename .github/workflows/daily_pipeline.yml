@@ -33,7 +33,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.12'
 
       # Step 4: Install all our required libraries
       - name: Install Dependencies
@@ -43,7 +43,7 @@ jobs:
       # Step 5: The Python Extraction (API -> BigQuery)
       - name: Run Python Extraction
         run: |
-          python 02_api_ingestion/bigquery_load.PY
+          python 02_api_ingestion/bigquery_load.py
 
       # Step 6: The dbt Transformation (BigQuery -> BigQuery)
       - name: Run dbt Models

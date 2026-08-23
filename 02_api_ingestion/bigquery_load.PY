@@ -2,6 +2,7 @@ import pandas as pd
 import requests
 import pandas_gbq
 
+# 0. Fetch
 print("🚀 Fetching Data from API...")
 
 # 1. Grab the API Data
