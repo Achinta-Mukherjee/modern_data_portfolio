@@ -26,7 +26,7 @@ jobs:
         uses: google-github-actions/auth@v2
         with:
           # REPLACE the string below with your actual WIF string!
-          workload_identity_provider: '//iam.googleapis.com/projects/616363217893/locations/global/workloadIdentityPools/github-actions-pool/providers/github-actions-provider'
+          workload_identity_provider: 'projects/616363217893/locations/global/workloadIdentityPools/github-actions-pool/providers/github-actions-provider'
           service_account: 'python-bq-loader@project-f8aca53c-7f41-4c40-968.iam.gserviceaccount.com'
 
       # Step 3: Install Python on the server
