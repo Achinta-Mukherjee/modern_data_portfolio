@@ -1,7 +1,7 @@
 # Modern Data Stack ELT Pipeline
 
 ## 📌 Project Overview
-This repository contains an automated, end-to-end ELT (Extract, Load, Transform) data pipeline built on Google Cloud Platform. It demonstrates modern data engineering practices by extracting data via API, loading it into a cloud data warehouse, and transforming it into analytical models using dbt—all fully automated and secured via CI/CD.
+This repository contains an automated, end-to-end ELT (Extract, Load, Transform) data pipeline built on Google Cloud Platform. It demonstrates modern data engineering practices by extracting data via API, loading it into a cloud data warehouse, and transforming it into analytical models using dbt - all fully automated and secured via CI/CD.
 
 ## 🏗️ Architecture & Tech Stack
 *   **Extraction:** Python (`requests`, `pandas`)
