@@ -1,6 +1,7 @@
 import pandas as pd
 import requests
 import pandas_gbq
+import google.auth
 
 print("🚀 Fetching Data from API...")
 
@@ -25,6 +26,9 @@ gcp_project_id = 'project-f8aca53c-7f41-4c40-968'
 bq_table = 'raw_data.api_users'
 
 # The Magic Line: Push the DataFrame directly to the cloud (Updated syntax)
-pandas_gbq.to_gbq(clean_df, destination_table=bq_table, project_id=gcp_project_id, if_exists='replace')
+
+# Grab the Workload Identity credentials from the environment
+credentials, project = google.auth.default()
+pandas_gbq.to_gbq(clean_df, destination_table=bq_table, project_id=gcp_project_id, if_exists='replace', credentials=credentials)
 
 print("✅ Success! The data is now live in BigQuery.")
