@@ -68,3 +68,4 @@ jobs:
         run: |
           cd modern_data_portfolio
           dbt run
+          dbt test
