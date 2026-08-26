@@ -57,7 +57,7 @@ jobs:
                 type: bigquery
                 method: oauth
                 project: project-f8aca53c-7f41-4c40-968
-                dataset: retail_dataset
+                dataset: raw_data
                 threads: 4
                 timeout_seconds: 300
                 location: US
