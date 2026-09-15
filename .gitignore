@@ -1,4 +1,62 @@
+==============================================================================
+
+1. INFRASTRUCTURE (Terraform)
+
+Location: 03_infrastructure/
+
+==============================================================================
+
 03_infrastructure/.terraform/
-*.tfstate
-*.tfstate.backup
-.terraform.lock.hcl
+03_infrastructure/*.tfstate
+03_infrastructure/*.tfstate.backup
+03_infrastructure/.terraform.lock.hcl
+
+==============================================================================
+
+2. ORCHESTRATION & SECURITY (Airflow / Docker)
+
+Location: 04_orchestration/
+
+==============================================================================
+
+CRITICAL SECURITY RULE: Your local VIP badge for Google Cloud.
+
+04_orchestration/config/gcp_key.json
+
+Ignore Airflow logs (These generate thousands of files and crash GitHub)
+
+04_orchestration/logs/
+
+Ignore Docker environment secrets (passwords)
+
+.env
+/.env
+
+==============================================================================
+
+3. PYTHON INGESTION (API Scripts)
+
+==============================================================================
+
+/pycache/
+*.pyc
+
+==============================================================================
+
+4. DATA TRANSFORMATION (dbt)
+
+Location: modern_data_portfolio/
+
+==============================================================================
+
+modern_data_portfolio/target/
+modern_data_portfolio/dbt_packages/
+
+==============================================================================
+
+5. SYSTEM FILES (Mac OS)
+
+==============================================================================
+
+.DS_Store
+/.DS_Store
